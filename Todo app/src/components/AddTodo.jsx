@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { IoAddCircleSharp } from "react-icons/io5";
 function AddTodo(props){
 const [todoName,setTodoName]=useState("");
 const [todoDate,setTodoDate]=useState("");
@@ -49,7 +50,7 @@ const handleAddTodo=()=>{
                  cursor: "pointer",                // pointer on hover
     transition: "all 0.3s ease",      // smooth hover effect
     boxShadow: "0px 4px 6px rgba(0,0,0,0.2)"         
-              }}>ADD</button>
+              }}><IoAddCircleSharp /></button>
     </div>
   </div>
   </div>

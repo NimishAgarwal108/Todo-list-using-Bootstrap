@@ -1,3 +1,4 @@
+import { MdDelete } from "react-icons/md";
 function TodoItem(props){
   return(
      <div className="container text-center">
@@ -17,14 +18,15 @@ function TodoItem(props){
               style={{
                 backgroundColor: "#d4220eff",   // nice red
     color: "white",                
-    fontSize: "18px",              
-    padding: "10px 16px",          
+    fontSize: "30px",              
+    padding: "10px 26px", 
+    width:"40%",         
     border: "none",                
-    borderRadius: "12px",          
+    borderRadius: "22px",          
     cursor: "pointer",             
     transition: "all 0.3s ease",   
     boxShadow: "0px 4px 6px rgba(0,0,0,0.2)" 
-              }}>Delete</button>
+              }}><MdDelete /></button>
 
     
     </div>
