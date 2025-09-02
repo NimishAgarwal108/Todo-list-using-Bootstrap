@@ -1,0 +1,10 @@
+.todo-container{
+  text-align: center;
+  font-size: 50px;
+  min-height: 100vh;
+  background-image: url('./src/assets/images/bgm-img.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 20px;
+}

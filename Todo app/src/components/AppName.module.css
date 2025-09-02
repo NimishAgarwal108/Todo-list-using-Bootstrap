@@ -1,0 +1,7 @@
+.todoHeading{
+    font-size: 60px;             
+  color: #ffffff;              
+  text-shadow: 5px 5px 18px rgba(233, 8, 147, 0.952); 
+  margin-bottom: 30px;         
+  font-family: 'Arial', sans-serif; 
+}
