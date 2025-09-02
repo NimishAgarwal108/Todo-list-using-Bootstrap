@@ -11,16 +11,18 @@ function App() {
     {
       name:"Meeting",
       dueDate:"06/09/2025",
+      done:false,
     },
     {
       name:"Movie",
       dueDate:"08/09/2025",
+      done:false,
     },
   ]
 
   const [todoItems,setTodoItem]=useState(initialTodoItems);
   const handleTodoItems=(itemName,itemDueDate)=>{
-    const newTodoItem=[...todoItems,{name:itemName,dueDate:itemDueDate}];
+    const newTodoItem=[...todoItems,{name:itemName,dueDate:itemDueDate,done:false}];
     setTodoItem(newTodoItem);
   };
 
@@ -30,6 +32,14 @@ function App() {
 
 
   }
+
+  const handleMarkDone = (todoName) => {
+  const updatedTodos = todoItems.map((item) =>
+    item.name === todoName ? { ...item, done:!item.done } : item
+  );
+  setTodoItem(updatedTodos);
+};
+
  
 
   return   (  
@@ -37,7 +47,7 @@ function App() {
       <AppName/>
       <AddTodo onNewItem={handleTodoItems}/>
       {todoItems.length===0 && <WelcomeMessage></WelcomeMessage>}
-      <TodoItems onDelete={handleDelete} todoItems={todoItems}></TodoItems>
+      <TodoItems onDone={handleMarkDone} onDelete={handleDelete} todoItems={todoItems} ></TodoItems>
       </div>
  );
   

@@ -3,7 +3,10 @@ function TodoItem(props){
      <div className="container text-center">
   <div className="row">
     <div className="col-6">
-       {props.todoName}
+       <span onClick={() =>props.onDone(props.todoName)}
+       style={{ cursor: "pointer" }}>
+      {props.done?<s>{props.todoName}</s>:props.todoName}
+    </span>
     </div>
     <div className="col-4">
       {props.todoDate}
@@ -22,6 +25,8 @@ function TodoItem(props){
     transition: "all 0.3s ease",   
     boxShadow: "0px 4px 6px rgba(0,0,0,0.2)" 
               }}>Delete</button>
+
+    
     </div>
   </div>
 </div>
