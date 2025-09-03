@@ -1,4 +1,4 @@
-import { useState,useRef } from "react";
+import {useRef } from "react";
 import { IoAddCircleSharp } from "react-icons/io5";
 
 function AddTodo(props){
