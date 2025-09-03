@@ -1,35 +1,37 @@
-import { useState } from "react";
+import { useState,useRef } from "react";
 import { IoAddCircleSharp } from "react-icons/io5";
+
 function AddTodo(props){
-const [todoName,setTodoName]=useState("");
-const [todoDate,setTodoDate]=useState("");
-const handleName=(event)=>{
-  setTodoName(event.target.value);
+ const todoNameElement = useRef();
+  const todoDateElement = useRef();
+
+
+const handleAddTodo=(event)=>{
+  const todoName=todoNameElement.current.value;
+  const todoDate=todoDateElement.current.value;
+
+    //to prevent empty inputs
+if (!todoName || !todoDate) {
+    alert("Please enter both task name and date.");
+    return;
+  }
+
+  props.onNewItem(todoName, todoDate);
+  todoNameElement.current.value="";
+  todoDateElement.current.value="";
+    
 
 
 };
-const handleDate=(event)=>{
-  setTodoDate(event.target.value);
-  
-};
-const handleAddTodo=()=>{
-
-  props.onNewItem(todoName,todoDate);
-   setTodoName("");
-   setTodoDate("");
-
-
-};
-
   
   return(
     <div className="container text-center" style={{marginTop:"60px"}}>
     <div className="row">
     <div className="col-6">
-      <input type="text" placeholder="enter task here" value={todoName} onChange={handleName} />
+      <input type="text" ref={todoNameElement} placeholder="enter task here"  />
     </div>
     <div className="col-4">
-      <input type="date" value={todoDate} onChange={handleDate}/>
+      <input type="date" ref={todoDateElement}/>
     </div>
     <div className="col-2">
       <button type="button"

@@ -9,8 +9,8 @@ function App() {
   const [todoItems, setTodoItem] = useState(() => {
     const savedTodos = localStorage.getItem("todoItems");
     return savedTodos ? JSON.parse(savedTodos) : [
-      { name: "Meeting", dueDate: "06/09/2025", done: false },
-      { name: "Movie", dueDate: "08/09/2025", done: false }
+      { name: "Meeting", date: "06/09/2025", done: false },
+      { name: "Movie", date: "08/09/2025", done: false }
     ];
   });
 
@@ -19,8 +19,8 @@ function App() {
     localStorage.setItem("todoItems", JSON.stringify(newTodos));
   };
 
-  const handleTodoItems = (itemName, itemDueDate) => {
-    const newTodoItem = [...todoItems, { name: itemName, dueDate: itemDueDate, done: false }];
+  const handleTodoItems = (itemName, itemDate) => {
+    const newTodoItem = [...todoItems, { name: itemName, date: itemDate, done: false }];
     updateTodos(newTodoItem);
   };
 
